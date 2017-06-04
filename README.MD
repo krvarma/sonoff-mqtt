@@ -7,6 +7,8 @@ The switch comes with default ESP8266 firmware which provides the functionality 
 
 **Sonoff Pins**
 
+![enter image description here](https://raw.githubusercontent.com/krvarma/sonoff-mqtt/master/images/pins.png)
+
 To program the ESP8266 on it, you solder headers to these pins and connect to 3.3v FTDI board. *Please note that it should be 3.3v compatible, don't use 5v FTDI board since it will damage the board*.
 
 **Wiring**
@@ -18,15 +20,21 @@ To program the ESP8266 on it, you solder headers to these pins and connect to 3.
 |Tx|Rx|
 |GND|GND|
 
-Once the wiring is completed connect the FTDI board to the computer. This will power the ESP8266. But this will not put the board in programming mode, it will just power the ESP8266. In order to put the board in programming mode, press and hold the button on the board ad connect the FTDI to the computer. This will put the board in programming mode. Once the board is in programming mode you can use the Arduino IDE to program it. Install the ESP8266 platform packages using Package Manager (You can find more information [here](https://github.com/esp8266/Arduino)) and select the board *Generic ESP8266*.
+Once the wiring is completed connect the FTDI board to the computer. This will power the ESP8266. But this will not put the board in programming mode, it will just power the ESP8266. In order to put the board in programming mode, press and hold the button on the board ad connect the FTDI to the computer. This will put the board in programming mode. Following picture shows the button on the board.
+
+![enter image description here](https://raw.githubusercontent.com/krvarma/sonoff-mqtt/master/images/programming%20button.png)
+
+Once the board is in programming mode you can use the Arduino IDE to program it. Install the ESP8266 platform packages using Package Manager (You can find more information [here](https://github.com/esp8266/Arduino)) and select the board *Generic ESP8266*.
 
 **Arduino Board Selection**
+
+![enter image description here](https://raw.githubusercontent.com/krvarma/sonoff-mqtt/master/images/arduino.png)
 
 The GPIO pin 12 is connected to the relay and GPIO pin 13 is connected to the LED. So in order to turn on the relay you can do digitalWrite on pin 12.
 
 **Demo Application**
 
-This demo connects to a MQTT server and listens for MQTT messages. The application listen the topic "***mqtteclipse/cmd***" for commands. For purpose of this demo the commands are simple 1 or 0. When the the payload 1 is received the relay is turned on and for 0 the relay is turned off. For this demo I am using publicly available Eclipse MQTT Sandbox server (***iot.eclipse.org***). If you have any other servers, replace the server (line 13 of the firmware). 
+This demo connects to a MQTT server and listens for MQTT messages. The application listen the topic "***mqtteclipse/cmd***" for commands. For purpose of this demo the commands are simple 1 or 0. When the the payload 1 is received the relay is turned on and for 0 the relay is turned off. For this demo I am using publicly available Eclipse MQTT Sandbox server (***iot.eclipse.org***). If you have any other servers, replace the server ([line 13 of the firmware](https://github.com/krvarma/sonoff-mqtt/blob/master/firmware/sonoff-mqtt.ino#L13)). 
 
     const char* mqtt_server = "iot.eclipse.org";
 
@@ -161,8 +169,10 @@ c. Name it as *eclipseqmtt*.
 d. Copy and paste the microservice and save the service
 6. Save and test the action using any Google Assistant platform.
 
-[This documentation](https://developers.google.com/actions/sdk/) describes all the necessary steps to create Actions on Google. I am using "Jarvis Home Manager" as the invocation name. But you can use any name as you want, just replace the invocation name on the Settings page of the action.
+[This documentation](https://developers.google.com/actions/sdk/) describes all the necessary steps to create Actions on Google. I am using "Jarvis Home Manager" as the invocation name. But you can use any name as you want, just replace the invocation name on the Settings page of the action. Following image shows our Actions on Google project:
+
+![enter image description here](https://raw.githubusercontent.com/krvarma/sonoff-mqtt/master/images/action-on-google.png)
 
 **Demo Video**
 
-https://www.youtube.com/watch?v=EzTtGxZzP8E
+[<img src="https://img.youtube.com/vi/EzTtGxZzP8E/0.jpg">](https://www.youtube.com/watch?v=EzTtGxZzP8E)
