@@ -1,0 +1,47 @@
+{
+    "actions": [
+      {
+        "description": "Default Welcome Intent",
+        "name": "MAIN",
+        "fulfillment": {
+          "conversationName": "sonoff_app"
+        },
+        "intent": {
+          "name": "actions.intent.MAIN",
+          "trigger": {
+            "queryPatterns": [
+              "talk to sonos"
+            ]
+          }
+        }
+      },
+      {
+        "description": "Turn on/off intent",
+        "name": "TURNONOFF",
+        "fulfillment": {
+          "conversationName": "sonoff_app"
+        },
+        "intent": {
+            "name": "com.sonoff.example.home",
+            "parameters": [
+                {
+                    "name": "cmd",
+                    "type": "SchemaOrg_Text"
+                }
+            ],
+            "trigger": {
+                "queryPatterns": [
+                    "Turn $SchemaOrg_Text:cmd kitchen light"
+                ]
+            }
+        }
+      }
+    ],
+    "conversations": {
+      "sonoff_app": {
+        "name": "sonoff_app",
+        "url": "https://hook.io/krvarma/eclipsemqtt"
+      }
+    }
+
+}
