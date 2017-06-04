@@ -1,7 +1,7 @@
 Home Automation using Sonoff WiFi Switch and Google Assistant
 ===
 
-Recently I got one Sonoff WiFi Switch from [Itead.cc](https://www.itead.cc/). Sonofff WiFi Switch is an ESP8266 based wireless switch and has a 5V Relay with a voltage range of 90-250V. Itead provides a mobile application eWeLinK to operate the switch remotely. The switch also works with Amazon Alexa and Nest which is awesome. You can find more details about how to use the switch [here](https://www.itead.cc/blog/user-guide-for-sonoff-slampher) and about Alexa integration [here](https://www.itead.cc/blog/ewelink-works-with-alexa-tutorial).
+Recently I got one [Sonoff WiFi Switch from Itead.cc](http://sonoff.itead.cc/en/products/sonoff/sonoff-basic). Sonofff WiFi Switch is an ESP8266 based wireless switch and has a 5V Relay with a voltage range of 90-250V. Itead provides a mobile application eWeLinK to operate the switch remotely. The switch also works with Amazon Alexa and Nest which is awesome. You can find more details about how to use the switch [here](https://www.itead.cc/blog/user-guide-for-sonoff-slampher) and about Alexa integration [here](https://www.itead.cc/blog/ewelink-works-with-alexa-tutorial).
 
 The switch comes with default ESP8266 firmware which provides the functionality to operate this remotely using the eWeLinK mobile application. But more advanced users can program theESP8266 chip on it. There is an unsoldered pins which brings out the Rx, Tx, GND and Vcc of the ESP8266. You can use this pins to re-program the ESP8266 which is another awesome thing about this.  Following picture shows the pins.
 
